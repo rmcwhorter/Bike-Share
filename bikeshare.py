@@ -111,7 +111,11 @@ def station_stats(df):
     print("The most common end station was: {}\n".format(common_end_station))
 
     # display most frequent combination of start station and end station trip
-
+    df["Combo Station"] = df["Start Station"] + "|" + df["End Station"]
+    combo_stations = df["Combo Station"].mode()[0]
+    combo_stations = combo_stations.split("|")
+    print("The most common route was:\n{} -> {}\n"
+          .format(combo_stations[0], combo_stations[1]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -146,17 +150,18 @@ def user_stats(df):
     print("User Type counts:\n{}\n".format(user_types))
 
     # Display counts of gender
-    gender = df["Gender"].value_counts()
-    print("The gender counts:\n{}\n".format(gender))
+    if "gender" in df:
+        gender = df["Gender"].value_counts()
+        print("The gender counts:\n{}\n".format(gender))
 
     # Display earliest, most recent, and most common year of birth
-    earliest_year = df["Birth Year"].min()
-    latest_year = df["Birth Year"].max()
-    most_common_year = df["Birth Year"].mode()[0]
+        earliest_year = df["Birth Year"].min()
+        latest_year = df["Birth Year"].max()
+        most_common_year = df["Birth Year"].mode()[0]
 
-    print("The earliest year of birth was: {}\n"
-          "The latest year of birth was: {}\n"
-          "the most common year of birth was: {}\n".format(earliest_year,latest_year,most_common_year))
+        print("The earliest year of birth was: {}\n"
+              "The latest year of birth was: {}\n"
+              "the most common year of birth was: {}\n".format(earliest_year,latest_year,most_common_year))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
