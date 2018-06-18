@@ -1,12 +1,12 @@
-#Bike Share
+# Bike Share
 
-##summary
+## Summary
 
 Loads CSV files with bike-share data, and then analyzes them based off of user input.
 This was a project for the Udacity Data Analyst nanodegree program.\
 (https://www.udacity.com/course/data-analyst-nanodegree--nd002)
 
-###requirements
+### Requirements
 (taken using pip freeze)\
 certifi==2018.4.16\
 mkl-fft==1.0.0\
@@ -16,3 +16,5 @@ pandas==0.23.1\
 python-dateutil==2.7.3\
 pytz==2018.4\
 six==1.11.0
+
+and python 3.6
