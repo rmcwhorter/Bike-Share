@@ -162,11 +162,19 @@ def user_stats(df):
     print('-'*40)
 
 def month_to_number(month_string):
+    """
+    converts a month in word form to a month in number form using the array below
+    normally I would filter data and/or be more careful, but because I did that above there wasn't any reason to repeat
+    """
     months = ["january", "february", "march", "april", "may", "june", "july", "august", "september",
               "october", "november", "december"]
     return months.index(month_string) + 1
 
 def month_to_string(month_int):
+    """
+    converts a month in integer form to a month in string form using the array below
+    again, normally I would filter this data, but it was already done above in this specific instance
+    """
     months = ["january", "february", "march", "april", "may", "june", "july", "august", "september",
               "october", "november", "december"]
     return months[month_int-1]
